@@ -43,7 +43,7 @@ jobs:
 
     - name: Add known_hosts
       run: |
-        ssh-keyscan -t ed25519 13.124.183.64 >> ~/.ssh/known_hosts
+        ssh-keyscan -t ed25519 54.180.92.168 >> ~/.ssh/known_hosts
 
     #- name: 기존프로세스 종료
     #  run: |
@@ -51,7 +51,7 @@ jobs:
 
     - name: Deploy to Server with rsync
       run: | 
-         rsync -avz -e "ssh -o StrictHostKeyChecking=no" build/libs/*.jar ubuntu@13.124.183.64:~/app
+         rsync -avz -e "ssh -o StrictHostKeyChecking=no" build/libs/*.jar ubuntu@54.180.92.168:~/app
 
 
     - name: Run SSH commands
